@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Vehicle{
+        constructor(type){
+            Vehicle.VEHICLECOUNT++;
+            this.type = type;
+        }
+        drive(){
+            console.log('Vehilce is driving');
+        }
+    }
+    Vehicle.VEHICLECOUNT = 0;
+    const vehicle = new Vehicle('Toyoto');
+    vehicle.drive();
+    console.log(Vehicle.VEHICLECOUNT);
+
+    class Car extends Vehicle{
+        constructor(type){
+            super(type);
+        }
+        balanceWheels(){
+            console.log('Wheels are balanced');
+        }
+    }
+    const car = new Car('Nissan');
+    car.drive();
+    car.balanceWheels();
+    console.log(Vehicle.VEHICLECOUNT);
+</script>
+</body>
+</html>
